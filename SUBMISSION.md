@@ -6,7 +6,7 @@
 
 ## 1. 專案簡介
 
-PaperLens 是繁體中文研究方法學學習網站，協助讀者理解論文用了什麼生物統計或機器學習方法、選用理由、條件與優缺點。第一篇案例為冷水淋浴 RCT，包含研究設計、時間方向與研究目的分類，八個固定分析區塊、七個方法解析表格及原文證據定位。
+PaperLens 是繁體中文研究方法學學習網站，協助讀者理解論文用了什麼生物統計或機器學習方法、選用理由、條件與優缺點。目前有冷水淋浴 RCT 與 ICU 肺炎死亡風險預測兩篇案例，各包含分類、八個固定分析區塊及證據定位，共十九張方法解析表格與十七個共用方法詞條。第二篇沿用同一資料契約與版型，無須修改頁面程式。
 
 目前以 AI 整理、使用者確認教學案例發布的流程運作；尚未提供網站內 PDF 自動分析或模型 API。案例仍保留未核對附件等限制，不宣稱已重現原始分析。
 
@@ -19,6 +19,8 @@ PaperLens 是繁體中文研究方法學學習網站，協助讀者理解論文�
 [PaperLens 網站](https://ychjam.github.io/paperlens-methods/)
 
 [首篇論文方法學分析](https://ychjam.github.io/paperlens-methods/paper.html?id=2016-cold-shower-rct)
+
+[第二篇機器學習方法分析](https://ychjam.github.io/paperlens-methods/paper.html?id=2025-vap-mortality-ml)
 
 ## 4. AGENTS.md
 

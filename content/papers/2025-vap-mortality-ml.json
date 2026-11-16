@@ -1,0 +1,1104 @@
+{
+  "schema_version": "2.0",
+  "id": "2025-vap-mortality-ml",
+  "status": "published",
+  "article": {
+    "title": "An interpretable machine learning model for predicting in-hospital mortality in ICU patients with ventilator-associated pneumonia",
+    "authors": [
+      "Junying Wei",
+      "Heshan Cao",
+      "Mingling Peng",
+      "Yinzhou Zhang",
+      "Sibei Li",
+      "Wuhua Ma",
+      "Yuhui Li"
+    ],
+    "year": 2025,
+    "doi": "10.1371/journal.pone.0316526",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0316526"
+  },
+  "source_scope": "full_text",
+  "source_files": [
+    {
+      "id": "article",
+      "label": "Wei et al., PLOS ONE 2025，出版商 HTML 主文全文",
+      "version": "2026-11-16 取得；CC BY。以下為繁體中文意譯與教學評論，不是作者原文。"
+    },
+    {
+      "id": "table2",
+      "label": "原文 Table 2，doi:10.1371/journal.pone.0316526.t002",
+      "version": "2026-11-16 取得圖像並目視核對。"
+    },
+    {
+      "id": "flowchart",
+      "label": "原文 Fig 1，doi:10.1371/journal.pone.0316526.g001",
+      "version": "2026-11-16 取得納入流程圖並目視核對。"
+    }
+  ],
+  "analysis_date": "2026-11-16",
+  "review": {
+    "status": "reviewed",
+    "reviewer": "專案使用者（GitHub: YCHjam）",
+    "reviewed_at": "2026-11-16",
+    "scope": "使用者取得第二篇流程驗證草稿後，於對話指示「更新網頁，然後撰寫交出去作業的文檔（word)」，據此確認教學成果可發布；不宣稱已獨立重做全部原文、附件或個體資料驗證。"
+  },
+  "classification": {
+    "study_design": {
+      "value": "cohort",
+      "other_label": null,
+      "rationale": {
+        "text": "以既有 ICU 紀錄建立患者群，使用住院死亡結局作預測，依流程判為世代研究。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-source",
+          "e-flow"
+        ]
+      }
+    },
+    "time_direction": {
+      "value": "retrospective",
+      "rationale": {
+        "text": "作者明述採回溯性資料。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-source"
+        ]
+      }
+    },
+    "purposes": [
+      {
+        "value": "prognosis_or_risk_prediction",
+        "rationale": {
+          "text": "目標是預測 VAP 患者院內死亡。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-purpose"
+          ]
+        }
+      },
+      {
+        "value": "method_development_or_validation",
+        "rationale": {
+          "text": "研究建立、比較並評估多個預測模型。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-models",
+            "e-performance"
+          ]
+        }
+      }
+    ],
+    "purposes_note": {
+      "text": "同時屬風險預測與模型開發／驗證；使用機器學習不會使設計變成 RCT。",
+      "basis": "inferred",
+      "evidence_ids": [
+        "e-purpose",
+        "e-source"
+      ]
+    },
+    "data_origin": [
+      {
+        "text": "資料來自 MIMIC-IV 的不同版本及年度。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-source"
+        ]
+      }
+    ]
+  },
+  "overview": {
+    "research_question": [
+      {
+        "text": "以既有病歷變項預測 VAP 患者院內死亡。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-purpose"
+        ]
+      }
+    ],
+    "study_design": [
+      {
+        "text": "回溯性世代與預測模型開發研究，並非介入效果試驗。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-source",
+          "e-models"
+        ]
+      }
+    ],
+    "data_and_sample": [
+      {
+        "text": "早期群 1,315 人、較晚群 579 人；早期資料作 80/20 切分。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-flow",
+          "e-split"
+        ]
+      },
+      {
+        "text": "預測時間點需與機械通氣後的變項取得窗口一致，不應把較晚才取得的資訊當成入院即有。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-preprocess",
+          "e-limitations"
+        ]
+      }
+    ],
+    "methods_summary": [
+      {
+        "text": "比較 14 個模型，搭配插補、Boruta、交叉驗證與貝氏搜尋；RF 再以 SHAP 解釋。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-preprocess",
+          "e-models",
+          "e-tuning",
+          "e-explain"
+        ]
+      },
+      {
+        "text": "基線比較另列 t、Wilcoxon、卡方與 Fisher 檢定。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-statistics"
+        ]
+      }
+    ],
+    "rationale": [
+      {
+        "text": "模型比較、特徵篩選與解釋屬不同步驟，需各自檢查資料使用範圍；不能以方法數量保證可靠。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-preprocess",
+          "e-models",
+          "e-explain"
+        ]
+      }
+    ],
+    "assumptions_and_limits": [
+      {
+        "text": "已讀主文未清楚交代插補與特徵選擇是否限制於訓練折；本次未核對附件與程式碼。",
+        "basis": "not_reported",
+        "evidence_ids": []
+      },
+      {
+        "text": "較晚年度測試仍來自同院，應與跨院外部驗證區分。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-source",
+          "e-split"
+        ]
+      }
+    ],
+    "results_interpretation": [
+      {
+        "text": "RF 的驗證／測試 AUROC 為 0.780／0.724；Table 2 未列信賴區間。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-table2"
+        ]
+      },
+      {
+        "text": "AUROC 是排序指標，不等於預測正確率，也不能單獨證明臨床效益。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-table2",
+          "e-evaluation"
+        ]
+      }
+    ],
+    "critical_appraisal": [
+      {
+        "text": "作者使用驗證與測試兩群表現來選模型，可能讓最終測試估計帶有選擇樂觀性，需另作獨立評估。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-selection"
+        ]
+      },
+      {
+        "text": "前處理的敘述順序不足以證明已發生洩漏；應回查實際執行流程。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-preprocess",
+          "e-split"
+        ]
+      },
+      {
+        "text": "統計段落提及 4 個特徵，而結果列出 12 個，屬需確認的文字不一致；不自行替作者修正。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-statistics",
+          "e-features"
+        ]
+      }
+    ]
+  },
+  "methods": [
+    {
+      "id": "random-forest",
+      "name_zh": "隨機森林",
+      "name_en": "Random forest",
+      "category": "machine_learning",
+      "general_explanation": "結合多棵經隨機化訓練的決策樹，整合各樹的分類結果。能表達非線性與交互作用；預測排序好，不代表機率校準或因果解釋也正確。",
+      "general_strengths": [
+        "相較單棵樹，可透過集成降低不穩定性。",
+        "可處理較複雜的變項關係，不必預先把每個交互作用寫成公式。"
+      ],
+      "general_limitations": [
+        "仍會受資料品質、分布漂移與調參方式影響。",
+        "特徵重要性不是致病原因；機率輸出須另外評估校準。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-learn 官方文件：Random forests",
+          "url": "https://scikit-learn.org/stable/modules/ensemble.html#forest"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者比較 14 個候選模型，最終選擇 RF。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-models",
+            "e-selection"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "作者以驗證與測試兩群的整體表現選定模型。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-selection"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "測試集表現若參與最終選模，該測試估計就不能視為完全未參與決策的最終泛化評估。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-selection"
+          ]
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "這是預後預測模型；不能由 RF 的預測能力推論改變某項特徵會改善死亡結果。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-purpose",
+            "e-explain"
+          ]
+        }
+      ],
+      "questions": [
+        "可否先凍結選模規則，再用另一批從未參與選擇的資料評估？"
+      ]
+    },
+    {
+      "id": "boruta-feature-selection",
+      "name_zh": "Boruta 特徵選擇",
+      "name_en": "Boruta feature selection",
+      "category": "machine_learning",
+      "general_explanation": "以隨機森林為基礎，將原始特徵的重要性與隨機化的影子特徵比較，尋找具有相關訊號的變項。它的目標偏向保留所有相關變項，而不是證明最小或因果變項集合。",
+      "general_strengths": [
+        "可用影子特徵作為重要性的隨機參考。",
+        "有助在多個候選變項中整理值得保留的預測訊號。"
+      ],
+      "general_limitations": [
+        "選擇結果依賴訓練資料、模型及相關特徵結構。",
+        "在切分前或所有資料上做選擇，可能將驗證資訊帶入訓練。"
+      ],
+      "general_references": [
+        {
+          "title": "Kursa & Rudnicki：Feature Selection with the Boruta Package",
+          "url": "https://www.jstatsoft.org/article/view/v036i11"
+        }
+      ],
+      "application": [
+        {
+          "text": "本文先進行相關性篩選，再採 Boruta。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-preprocess"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "此步驟可縮減輸入與整理預測訊號；並不表示保留的特徵是死亡的因果因素。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-preprocess"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Data collection and processing 未清楚說明每次交叉驗證內是否重新執行特徵選擇；本次未檢閱程式碼。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "主文對 12 個最終特徵與統計段落的 4 個特徵有不同表述，需核對而不能自行改寫成一致。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-features",
+            "e-statistics"
+          ]
+        }
+      ],
+      "questions": [
+        "相關篩選與 Boruta 是只用訓練資料擬合，還是曾接觸驗證／測試資料？"
+      ]
+    },
+    {
+      "id": "multiple-imputation",
+      "name_zh": "多重插補",
+      "name_en": "Multiple imputation",
+      "category": "biostatistics",
+      "general_explanation": "建立多個對缺漏值合理的完整資料版本，讓缺漏的不確定性可在後續分析中被考慮。具體插補模型與合併方式會影響結果；MICE 是一種實作，不代表所有多重插補都用 MICE。",
+      "general_strengths": [
+        "可在合適假設下利用部分不完整的紀錄。",
+        "相較只填一次固定值，能表達缺漏值的不確定性。"
+      ],
+      "general_limitations": [
+        "依賴缺漏機制、插補模型與變項選擇等假設。",
+        "用驗證或測試資料一起擬合插補模型可能造成資訊洩漏。"
+      ],
+      "general_references": [
+        {
+          "title": "van Buuren & Groothuis-Oudshoorn：mice 方法論",
+          "url": "https://www.jstatsoft.org/article/view/v045i03"
+        }
+      ],
+      "application": [
+        {
+          "text": "依缺漏比例排除特徵，其餘採多重插補。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-preprocess"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能為保留可用資料；這是分析者對方法目的的解釋，不代表作者已證明缺漏假設成立。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-preprocess"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文僅稱多重插補，未見完整插補次數、演算法、合併方式及各資料切分的擬合範圍；不推定為 MICE。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "需要把插補流程放進資料切分與驗證架構中理解，不能因使用多重插補便認定沒有偏差。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-preprocess",
+            "e-split"
+          ]
+        }
+      ],
+      "questions": [
+        "插補模型是否用到結果或測試集資訊？多個插補版本如何合併預測與不確定性？"
+      ]
+    },
+    {
+      "id": "holdout-temporal-validation",
+      "name_zh": "分層留出與時間驗證",
+      "name_en": "Stratified hold-out and temporal validation",
+      "category": "machine_learning",
+      "general_explanation": "留出法把建模與評估資料分開；分層切分維持指定層別的比例。時間驗證改用較晚時期資料，與不同醫院的地理外部驗證檢查的是不同面向。",
+      "general_strengths": [
+        "讓模型在未直接用於擬合的觀察資料上接受評估。",
+        "較晚年度資料能檢查部分時間變化下的表現。"
+      ],
+      "general_limitations": [
+        "隨機切分結果可能受切分種子影響。",
+        "同一人的重複紀錄若跨集合，或評估集參與選模，仍可能高估泛化。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-learn 官方文件：Cross-validation and hold-out",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "較早年度資料分成訓練與驗證群，較晚年度另作測試。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-split",
+            "e-source"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "按來源判讀，較晚年度的測試屬同院時間驗證；作者所稱外部測試不等同跨院地理驗證。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-source",
+            "e-split"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Model development 未清楚交代分層變項、隨機種子與同一病人的跨集合排除規則；本次未查程式碼。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "須分開報告內部切分、時間驗證與跨院驗證；此篇不能作為已完成跨院驗證的證據。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-source",
+            "e-split"
+          ]
+        }
+      ],
+      "questions": [
+        "資料庫版本包含相同來源時，如何確認測試者與建模者互不重疊？"
+      ]
+    },
+    {
+      "id": "k-fold-cross-validation",
+      "name_zh": "K 折交叉驗證",
+      "name_en": "K-fold cross-validation",
+      "category": "machine_learning",
+      "general_explanation": "輪流保留一折作評估，用其餘折擬合模型，再彙整各次表現。調參與特徵選擇若使用這些結果，仍需另一層獨立評估來估計最終泛化。",
+      "general_strengths": [
+        "比單一留出切分更充分利用訓練資料。",
+        "可協助比較不同設定下表現的穩定性。"
+      ],
+      "general_limitations": [
+        "每折都需要重新擬合完整前處理與模型流程。",
+        "若在同一套折內反覆選設定再當作最終評估，仍有選擇樂觀偏差。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-learn 官方文件：K-fold cross-validation",
+          "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者在訓練時採五折交叉驗證。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-tuning"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "主文將此與調參及避免過度擬合連結。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-tuning"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文未完整交代插補、Boruta 是否在每折重做，也未呈現完整巢狀驗證流程；附件與程式碼未核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "採五折不代表已排除全部洩漏，仍要檢查每折內哪些步驟用到評估資料。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-preprocess",
+            "e-tuning"
+          ]
+        }
+      ],
+      "questions": [
+        "每折的特徵選擇、超參數搜尋及最後報告指標是否使用不同層級的資料？"
+      ]
+    },
+    {
+      "id": "bayesian-hyperparameter-search",
+      "name_zh": "貝氏超參數搜尋",
+      "name_en": "Bayesian hyperparameter search",
+      "category": "machine_learning",
+      "general_explanation": "根據先前嘗試的超參數與評估結果，建立搜尋策略，再挑選值得嘗試的下一組設定。這是尋找模型設定的方法，不是直接對臨床效果做貝氏推論。",
+      "general_strengths": [
+        "在昂貴的模型評估下可較有效率地安排搜尋。",
+        "能配合交叉驗證比較設定。"
+      ],
+      "general_limitations": [
+        "結果依搜尋空間、預算與目標函數而變。",
+        "有效率的搜尋仍可能對用來調參的資料過度適應。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-optimize 官方文件：BayesSearchCV",
+          "url": "https://scikit-optimize.readthedocs.io/en/latest/modules/generated/skopt.BayesSearchCV.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "本文報告以 Bayesian search 調整超參數。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-tuning"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "作者將其用於最佳化模型並降低過度擬合。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-tuning"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文未完整列出搜尋範圍、搜尋次數與目標函數；本次未讀超參數附件，不推定使用 BayesSearchCV 套件。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "搜尋結果應在未參與調參及選模的資料上評估，才有助判讀泛化。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-tuning",
+            "e-selection"
+          ]
+        }
+      ],
+      "questions": [
+        "每個候選模型是否有可比較的搜尋預算與預先指定的評估目標？"
+      ]
+    },
+    {
+      "id": "roc-auroc-threshold",
+      "name_zh": "ROC／AUROC 與分類門檻",
+      "name_en": "ROC, AUROC and classification threshold",
+      "category": "biostatistics",
+      "general_explanation": "ROC 描述不同門檻下的敏感度與偽陽性率，AUROC 彙整判別排序能力。選定門檻後的敏感度、特異度與準確率回答另一組問題，不能與 AUROC 混為一談。",
+      "general_strengths": [
+        "AUROC 不限於單一分類門檻，可比較排序表現。",
+        "配合門檻相關指標可呈現不同類型的分類錯誤。"
+      ],
+      "general_limitations": [
+        "不直接描述機率校準、臨床淨效益或可接受的錯誤成本。",
+        "最佳門檻若在測試資料上重新選擇，報告的操作點表現可能偏樂觀。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-learn 官方文件：Model evaluation",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者以 AUROC 等指標比較模型，門檻用 Youden 指數。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-evaluation"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "Youden 指數是統計上的操作點準則；不等同已依臨床錯誤代價選出適合採用的門檻。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-evaluation"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文與 Table 2 未清楚交代門檻在哪一資料集選定、是否固定套用，Table 2 也未列 AUROC 信賴區間。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "表中的 AUROC 與敏感度是不同指標；不可將 0.724 解釋為 72.4% 個案預測正確。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-table2"
+          ]
+        }
+      ],
+      "questions": [
+        "是否應補充 AUROC 不確定性、PR 指標，以及預先凍結門檻的操作表現？"
+      ]
+    },
+    {
+      "id": "probability-calibration",
+      "name_zh": "預測機率校準評估",
+      "name_en": "Probability calibration assessment",
+      "category": "biostatistics",
+      "general_explanation": "檢視模型給出的預測機率是否與實際事件比例相符。判別排序與機率校準是不同能力；評估校準也不表示一定做過再校準。",
+      "general_strengths": [
+        "有助判斷預測機率本身是否可解釋。",
+        "可發現排序尚可但風險整體高估或低估的模型。"
+      ],
+      "general_limitations": [
+        "校準曲線會受樣本量、分組與平滑方式影響。",
+        "較晚年度或不同族群可能需要重新評估，不能只看單一圖形宣稱普遍可靠。"
+      ],
+      "general_references": [
+        {
+          "title": "scikit-learn 官方文件：Probability calibration",
+          "url": "https://scikit-learn.org/stable/modules/calibration.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者使用校準曲線評估模型。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-evaluation",
+            "e-performance"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "其用途是補充 AUROC 無法回答的機率適配問題。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-evaluation"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "已讀主文與 Table 2 未見完整的校準斜率、截距及其不確定性；Fig 3 本次未目視核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "本卡片記錄校準評估，不能改寫成作者已執行額外的校準訓練程序。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-evaluation"
+          ]
+        }
+      ],
+      "questions": [
+        "各資料群的校準曲線與量化指標是否一致？事件比例改變會如何影響校準？"
+      ]
+    },
+    {
+      "id": "decision-curve-analysis",
+      "name_zh": "決策曲線分析",
+      "name_en": "Decision curve analysis",
+      "category": "biostatistics",
+      "general_explanation": "在不同風險門檻下，依真陽性與偽陽性的權衡計算淨效益，通常與全做、全不做的策略比較。需先說清楚用預測結果決定的是什麼行動。",
+      "general_strengths": [
+        "可將模型表現與指定的決策權衡連結。",
+        "讓同一模型在不同門檻下的潛在價值可被比較。"
+      ],
+      "general_limitations": [
+        "需要合理的門檻範圍與行動情境。",
+        "較高淨效益不是介入真的改善病人結果的直接證明。"
+      ],
+      "general_references": [
+        {
+          "title": "Vickers & Elkin：Decision curve analysis 原始方法論",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17099194/"
+        }
+      ],
+      "application": [
+        {
+          "text": "本文以決策曲線評估潛在決策價值。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-evaluation",
+            "e-performance"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "這是補充判別與校準的決策層面評估，不能取代臨床影響研究。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-evaluation"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "已讀主文未充分定義實際決策行動、門檻偏好與前瞻採用後效果；Fig 3 與個體資料未重算。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "不宜把作者呈現 DCA 直接翻成已證明臨床療效。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-evaluation",
+            "e-limitations"
+          ]
+        }
+      ],
+      "questions": [
+        "風險超過門檻後會做什麼？偽陽性與偽陰性的後果是否支持這組權重？"
+      ]
+    },
+    {
+      "id": "shap-explanations",
+      "name_zh": "SHAP 預測解釋",
+      "name_en": "SHapley Additive exPlanations",
+      "category": "machine_learning",
+      "general_explanation": "將模型某次輸出相對基準的差異分配給輸入特徵。可彙整整體重要性或解釋單一預測；輸出尺度與特徵相依假設會影響解讀。",
+      "general_strengths": [
+        "能用同一套加法式歸因呈現整體與個體層級的模型解釋。",
+        "有助檢查模型是否依賴不合理或時間上不可能取得的訊號。"
+      ],
+      "general_limitations": [
+        "解釋的是模型，不是致病機制；不能由 SHAP 得出治療某變項會改善結果。",
+        "相關變項、背景資料與 explainer 設定會影響歸因。"
+      ],
+      "general_references": [
+        {
+          "title": "SHAP 官方文件：TreeExplainer",
+          "url": "https://shap.readthedocs.io/en/latest/generated/shap.TreeExplainer.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者對最終模型提供整體與局部 SHAP 解釋。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-explain"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "主文說明用來視覺化特徵對預測的貢獻。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-explain"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文未完整交代 explainer、背景資料與模型輸出尺度；不可直接假設為機率尺度或特定 TreeExplainer 設定。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "特徵的重要性與正負方向只描述模型歸因，不能直接轉成個人治療建議。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-explain"
+          ]
+        }
+      ],
+      "questions": [
+        "背景資料如何取樣？高度相關的腎功能與酸鹼指標，歸因是否穩定？"
+      ]
+    },
+    {
+      "id": "mann-whitney-u",
+      "name_zh": "Mann–Whitney U 檢定",
+      "name_en": "Mann–Whitney U test",
+      "category": "biostatistics",
+      "general_explanation": "以秩次比較兩個獨立樣本；與 Wilcoxon rank-sum test 對應。它不等於用於同一人前後測的 Wilcoxon signed-rank test。",
+      "general_strengths": [
+        "適合兩個獨立組別的秩次比較，不要求原始數值常態。",
+        "對偏斜或序位資料可提供與平均數檢定不同的比較方式。"
+      ],
+      "general_limitations": [
+        "若要解釋為單純中位數差異，仍需分布形狀等額外條件。",
+        "不能直接當成重複測量或配對資料的分析方法；多次比較需考慮多重性。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：wilcox.test",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者列出 Wilcoxon rank-sum 作為非正態連續變項的比較方式；此與 Mann–Whitney U 對應。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-statistics"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能配合非正態結果的組間比較；本文未逐項對應每個變項的選用理由。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-statistics"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "已讀主文未逐項說明分布形狀、綁定值及每項比較的處理；本次未核對基線表圖像與附件。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "基線組間差異檢定不等於個體預測表現，也不證明已消除混雜或選擇偏差。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-statistics",
+            "e-purpose"
+          ]
+        }
+      ],
+      "questions": [
+        "哪一些比較採 Wilcoxon rank-sum？不能把獨立樣本檢定當作重複測量模型。"
+      ]
+    },
+    {
+      "id": "chi-square-test",
+      "name_zh": "卡方檢定",
+      "name_en": "Chi-square test",
+      "category": "biostatistics",
+      "general_explanation": "以觀察頻數與虛無假設下的預期頻數比較，常用來檢視列聯表中兩個類別變項是否獨立。資料是頻數，不是直接拿百分比代入。",
+      "general_strengths": [
+        "可用簡單列聯表比較類別結果與組別的關聯。",
+        "能處理多於兩組或多於兩個類別的整體比較。"
+      ],
+      "general_limitations": [
+        "漸近近似需注意預期頻數與觀察獨立性。",
+        "顯著性不直接提供關聯大小，仍需報告適當的比例、效果量及不確定性。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：chisq.test",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/chisq.test.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者列出卡方檢定比較類別變項。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-statistics"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能因資料為類別頻數；本文未逐項對應所有列聯表。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-statistics"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "已讀主文未列出每個列聯表的預期格數與精確檢定切換規則；本次未核對所有表格。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "基線組間差異檢定不等於個體預測表現，也不證明已消除混雜或選擇偏差。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-statistics",
+            "e-purpose"
+          ]
+        }
+      ],
+      "questions": [
+        "是否有稀疏格數？哪些比較因此改用 Fisher 精確檢定？"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-purpose",
+      "source_file_id": "article",
+      "section": "Introduction",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "最後兩段：研究目標為院內死亡預測、模型評估與解釋。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-source",
+      "source_file_id": "article",
+      "section": "Materials and methods / Study population",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 1、2 段：回溯性設計、資料版本、同一醫療機構與不同時期；最後一段說明以 ICD 碼辨識 VAP。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-flow",
+      "source_file_id": "flowchart",
+      "section": "Fig 1",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "兩個分支的 MV ≥48h 節點分別為 1,315 與 579；左分支再分 80% 訓練、20% 驗證。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-preprocess",
+      "source_file_id": "article",
+      "section": "Materials and methods / Data collection and processing",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "全節：機械通氣 48h 後的 24h 變項窗口、缺漏比例門檻、插補、相關篩選與 Boruta；此處未提供足以核實的折內執行順序。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-split",
+      "source_file_id": "article",
+      "section": "Materials and methods / Model development",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 1、3 段：分層 80/20 切分與較晚年度資料的測試設定。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-models",
+      "source_file_id": "article",
+      "section": "Materials and methods / Model development",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 2 段完整候選清單：AdaBoost、CatBoost、DT、ET、GBDT、KNN、LDA、LightGBM、LR、MLP、NB、RF、SVM、XGBoost。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-tuning",
+      "source_file_id": "article",
+      "section": "Materials and methods / Model development",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 3 段：訓練時五折交叉驗證及 Bayesian search；超參數細節指向 S3 Table。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-evaluation",
+      "source_file_id": "article",
+      "section": "Materials and methods / Model development",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 4、5 段：AUROC、準確率、敏感度、特異度、Youden 指數、校準與決策曲線。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-explain",
+      "source_file_id": "article",
+      "section": "Materials and methods / Feature selection and model explanation; Results / Model explanation",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "方法段說明整體與局部解釋；結果引用 Fig 4、5。本次未逐張目視核對 SHAP 圖。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-statistics",
+      "source_file_id": "article",
+      "section": "Materials and methods / Statistical analysis",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "全節：VIF 敘述提及 4 個選定特徵，後段列出基線比較檢定；不推定每個變項使用的確切檢定。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-features",
+      "source_file_id": "article",
+      "section": "Results / Model performance",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "第 1 段：列出最終 12 個特徵，與統計段落的數量表述需核對。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-selection",
+      "source_file_id": "article",
+      "section": "Results / Model performance",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "Table 2 前段落：作者說明綜合驗證群與測試群的全部模型表現後選定 RF。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-performance",
+      "source_file_id": "article",
+      "section": "Results / Model performance; Fig 3 caption",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "敘述最終模型的 ROC、校準、DCA；本次僅閱讀敘述與圖說，未目視核對 Fig 3。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-table2",
+      "source_file_id": "table2",
+      "section": "Table 2",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "RF 列、Validation cohort 與 Test cohort 的 AUC 欄，分別 0.780 與 0.724；表格未提供信賴區間。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-limitations",
+      "source_file_id": "article",
+      "section": "Discussion",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "最後限制段落：回溯性、VAP 診斷時間難確定、未納部分感染／免疫變項與未評估時間動態。",
+      "excerpt": ""
+    }
+  ],
+  "reading_questions": [
+    "『外部』是不同年度、不同醫院，還是完全獨立的資料來源？",
+    "插補、相關篩選與 Boruta 是否在資料切分後，且每折重新擬合？",
+    "測試集是否參與最終模型與門檻選擇？若有，還需要哪一組獨立評估資料？",
+    "預測時間點定在哪一刻？當時是否已取得全部 12 個特徵？",
+    "Table 2 中 AUROC、準確率、敏感度與特異度各回答什麼問題？",
+    "SHAP 解釋的是模型輸出還是治療介入效果？",
+    "主文的特徵數量表述不一致，能否由附件或作者程式碼釐清？"
+  ],
+  "limitations": [
+    "這是教學案例發布確認；已讀主文並目視核對 Fig 1、Table 2，沒有重跑原始資料或模型，也不代表全部附件已獨立核對。",
+    "已讀取出版商 HTML 主文，並目視核對 Fig 1 與 Table 2；其餘圖、附件、程式碼與應用程式未全面核對。",
+    "沒有下載 MIMIC 或補充附件中的個體層級資料，也沒有執行模型、重算 AUROC 或評估臨床用途。",
+    "方法表格聚焦最終 RF 與前處理、調參、評估、解釋流程；14 個候選演算法保留在證據清單，並非逐一建立演算法百科。基線比較重用 Wilcoxon／Mann–Whitney 與卡方詞條；t、Fisher 及 VIF 本次只列出、未逐一展開。",
+    "方法通識引用官方文件或原始方法論，不代表作者使用該特定套件、函式或目前版本。",
+    "主文未交代的執行細節標為未報告；風險推論不等於已證實資料洩漏或研究無效。",
+    "原文 CC BY；本分析為繁體中文意譯與教學評論，保留作者、DOI 與原文連結。HTML 無固定頁碼，採章節與圖表定位。"
+  ]
+}

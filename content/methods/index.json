@@ -145,5 +145,215 @@
         "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html"
       }
     ]
+  },
+  {
+    "id": "random-forest",
+    "name_zh": "隨機森林",
+    "name_en": "Random forest",
+    "category": "machine_learning",
+    "explanation": "結合多棵經隨機化訓練的決策樹，整合各樹的分類結果。能表達非線性與交互作用；預測排序好，不代表機率校準或因果解釋也正確。",
+    "strengths": [
+      "相較單棵樹，可透過集成降低不穩定性。",
+      "可處理較複雜的變項關係，不必預先把每個交互作用寫成公式。"
+    ],
+    "limitations": [
+      "仍會受資料品質、分布漂移與調參方式影響。",
+      "特徵重要性不是致病原因；機率輸出須另外評估校準。"
+    ],
+    "references": [
+      {
+        "title": "scikit-learn 官方文件：Random forests",
+        "url": "https://scikit-learn.org/stable/modules/ensemble.html#forest"
+      }
+    ]
+  },
+  {
+    "id": "boruta-feature-selection",
+    "name_zh": "Boruta 特徵選擇",
+    "name_en": "Boruta feature selection",
+    "category": "machine_learning",
+    "explanation": "以隨機森林為基礎，將原始特徵的重要性與隨機化的影子特徵比較，尋找具有相關訊號的變項。它的目標偏向保留所有相關變項，而不是證明最小或因果變項集合。",
+    "strengths": [
+      "可用影子特徵作為重要性的隨機參考。",
+      "有助在多個候選變項中整理值得保留的預測訊號。"
+    ],
+    "limitations": [
+      "選擇結果依賴訓練資料、模型及相關特徵結構。",
+      "在切分前或所有資料上做選擇，可能將驗證資訊帶入訓練。"
+    ],
+    "references": [
+      {
+        "title": "Kursa & Rudnicki：Feature Selection with the Boruta Package",
+        "url": "https://www.jstatsoft.org/article/view/v036i11"
+      }
+    ]
+  },
+  {
+    "id": "multiple-imputation",
+    "name_zh": "多重插補",
+    "name_en": "Multiple imputation",
+    "category": "biostatistics",
+    "explanation": "建立多個對缺漏值合理的完整資料版本，讓缺漏的不確定性可在後續分析中被考慮。具體插補模型與合併方式會影響結果；MICE 是一種實作，不代表所有多重插補都用 MICE。",
+    "strengths": [
+      "可在合適假設下利用部分不完整的紀錄。",
+      "相較只填一次固定值，能表達缺漏值的不確定性。"
+    ],
+    "limitations": [
+      "依賴缺漏機制、插補模型與變項選擇等假設。",
+      "用驗證或測試資料一起擬合插補模型可能造成資訊洩漏。"
+    ],
+    "references": [
+      {
+        "title": "van Buuren & Groothuis-Oudshoorn：mice 方法論",
+        "url": "https://www.jstatsoft.org/article/view/v045i03"
+      }
+    ]
+  },
+  {
+    "id": "holdout-temporal-validation",
+    "name_zh": "分層留出與時間驗證",
+    "name_en": "Stratified hold-out and temporal validation",
+    "category": "machine_learning",
+    "explanation": "留出法把建模與評估資料分開；分層切分維持指定層別的比例。時間驗證改用較晚時期資料，與不同醫院的地理外部驗證檢查的是不同面向。",
+    "strengths": [
+      "讓模型在未直接用於擬合的觀察資料上接受評估。",
+      "較晚年度資料能檢查部分時間變化下的表現。"
+    ],
+    "limitations": [
+      "隨機切分結果可能受切分種子影響。",
+      "同一人的重複紀錄若跨集合，或評估集參與選模，仍可能高估泛化。"
+    ],
+    "references": [
+      {
+        "title": "scikit-learn 官方文件：Cross-validation and hold-out",
+        "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+      }
+    ]
+  },
+  {
+    "id": "k-fold-cross-validation",
+    "name_zh": "K 折交叉驗證",
+    "name_en": "K-fold cross-validation",
+    "category": "machine_learning",
+    "explanation": "輪流保留一折作評估，用其餘折擬合模型，再彙整各次表現。調參與特徵選擇若使用這些結果，仍需另一層獨立評估來估計最終泛化。",
+    "strengths": [
+      "比單一留出切分更充分利用訓練資料。",
+      "可協助比較不同設定下表現的穩定性。"
+    ],
+    "limitations": [
+      "每折都需要重新擬合完整前處理與模型流程。",
+      "若在同一套折內反覆選設定再當作最終評估，仍有選擇樂觀偏差。"
+    ],
+    "references": [
+      {
+        "title": "scikit-learn 官方文件：K-fold cross-validation",
+        "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+      }
+    ]
+  },
+  {
+    "id": "bayesian-hyperparameter-search",
+    "name_zh": "貝氏超參數搜尋",
+    "name_en": "Bayesian hyperparameter search",
+    "category": "machine_learning",
+    "explanation": "根據先前嘗試的超參數與評估結果，建立搜尋策略，再挑選值得嘗試的下一組設定。這是尋找模型設定的方法，不是直接對臨床效果做貝氏推論。",
+    "strengths": [
+      "在昂貴的模型評估下可較有效率地安排搜尋。",
+      "能配合交叉驗證比較設定。"
+    ],
+    "limitations": [
+      "結果依搜尋空間、預算與目標函數而變。",
+      "有效率的搜尋仍可能對用來調參的資料過度適應。"
+    ],
+    "references": [
+      {
+        "title": "scikit-optimize 官方文件：BayesSearchCV",
+        "url": "https://scikit-optimize.readthedocs.io/en/latest/modules/generated/skopt.BayesSearchCV.html"
+      }
+    ]
+  },
+  {
+    "id": "roc-auroc-threshold",
+    "name_zh": "ROC／AUROC 與分類門檻",
+    "name_en": "ROC, AUROC and classification threshold",
+    "category": "biostatistics",
+    "explanation": "ROC 描述不同門檻下的敏感度與偽陽性率，AUROC 彙整判別排序能力。選定門檻後的敏感度、特異度與準確率回答另一組問題，不能與 AUROC 混為一談。",
+    "strengths": [
+      "AUROC 不限於單一分類門檻，可比較排序表現。",
+      "配合門檻相關指標可呈現不同類型的分類錯誤。"
+    ],
+    "limitations": [
+      "不直接描述機率校準、臨床淨效益或可接受的錯誤成本。",
+      "最佳門檻若在測試資料上重新選擇，報告的操作點表現可能偏樂觀。"
+    ],
+    "references": [
+      {
+        "title": "scikit-learn 官方文件：Model evaluation",
+        "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#roc-metrics"
+      }
+    ]
+  },
+  {
+    "id": "probability-calibration",
+    "name_zh": "預測機率校準評估",
+    "name_en": "Probability calibration assessment",
+    "category": "biostatistics",
+    "explanation": "檢視模型給出的預測機率是否與實際事件比例相符。判別排序與機率校準是不同能力；評估校準也不表示一定做過再校準。",
+    "strengths": [
+      "有助判斷預測機率本身是否可解釋。",
+      "可發現排序尚可但風險整體高估或低估的模型。"
+    ],
+    "limitations": [
+      "校準曲線會受樣本量、分組與平滑方式影響。",
+      "較晚年度或不同族群可能需要重新評估，不能只看單一圖形宣稱普遍可靠。"
+    ],
+    "references": [
+      {
+        "title": "scikit-learn 官方文件：Probability calibration",
+        "url": "https://scikit-learn.org/stable/modules/calibration.html"
+      }
+    ]
+  },
+  {
+    "id": "decision-curve-analysis",
+    "name_zh": "決策曲線分析",
+    "name_en": "Decision curve analysis",
+    "category": "biostatistics",
+    "explanation": "在不同風險門檻下，依真陽性與偽陽性的權衡計算淨效益，通常與全做、全不做的策略比較。需先說清楚用預測結果決定的是什麼行動。",
+    "strengths": [
+      "可將模型表現與指定的決策權衡連結。",
+      "讓同一模型在不同門檻下的潛在價值可被比較。"
+    ],
+    "limitations": [
+      "需要合理的門檻範圍與行動情境。",
+      "較高淨效益不是介入真的改善病人結果的直接證明。"
+    ],
+    "references": [
+      {
+        "title": "Vickers & Elkin：Decision curve analysis 原始方法論",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17099194/"
+      }
+    ]
+  },
+  {
+    "id": "shap-explanations",
+    "name_zh": "SHAP 預測解釋",
+    "name_en": "SHapley Additive exPlanations",
+    "category": "machine_learning",
+    "explanation": "將模型某次輸出相對基準的差異分配給輸入特徵。可彙整整體重要性或解釋單一預測；輸出尺度與特徵相依假設會影響解讀。",
+    "strengths": [
+      "能用同一套加法式歸因呈現整體與個體層級的模型解釋。",
+      "有助檢查模型是否依賴不合理或時間上不可能取得的訊號。"
+    ],
+    "limitations": [
+      "解釋的是模型，不是致病機制；不能由 SHAP 得出治療某變項會改善結果。",
+      "相關變項、背景資料與 explainer 設定會影響歸因。"
+    ],
+    "references": [
+      {
+        "title": "SHAP 官方文件：TreeExplainer",
+        "url": "https://shap.readthedocs.io/en/latest/generated/shap.TreeExplainer.html"
+      }
+    ]
   }
 ]

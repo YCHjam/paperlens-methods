@@ -1,6 +1,6 @@
 # AGENTS.md — PaperLens｜研究方法拆解室
 
-版本：1.6  
+版本：1.8
 更新日期：2026-11-16  
 適用範圍：本 Repository 全部內容與程式。
 
@@ -21,13 +21,13 @@
 
 ## 2. 目前狀態與範圍
 
-目前為「首版已公開階段」：首頁、分類篩選、共用分析頁、方法小辭典與 GitHub Pages 工作流程均已建立。首篇真實全文教學案例 2016-cold-shower-rct 經使用者確認可發布，公開索引有一篇案例，方法小辭典有七個詞條；使用者的發布確認不代表原始資料、全部附件或數值的獨立重現驗證。
+目前為「首版已公開階段」：首頁、分類篩選、共用分析頁、方法小辭典與 GitHub Pages 工作流程均已建立。首篇真實全文教學案例 2016-cold-shower-rct 經使用者確認可發布，公開索引有兩篇案例，方法小辭典有十七個詞條；使用者的發布確認不代表原始資料、全部附件或數值的獨立重現驗證。
 
 Repository：https://github.com/YCHjam/paperlens-methods
 公開網站：https://ychjam.github.io/paperlens-methods/
 2026-11-16 首次 GitHub Actions 部署成功，已實際開啟首頁、論文分析頁、小辭典與 AGENTS.md。後續更新仍須確認相應工作流程成功及網址可用。
 
-未實作模型 API；尚待第二篇真實案例的延伸示範。
+第二篇延伸流程已驗證並取得使用者更新網頁的發布指示：2025-vap-mortality-ml 為回溯性世代／預測模型研究，狀態 published/reviewed，十二張方法表格、十五處證據定位；重用兩個既有詞條，新增十個詞條，合計十七個詞條。版型、JavaScript 與 schema 未因新增案例修改。兩篇教學案例均公開；確認範圍見 docs/release-confirmation.md。未實作模型 API。
 
 第一版目標：
 - 至少一篇取得合法來源、經人工核對的完整案例。
@@ -54,8 +54,8 @@ PDF 網站上傳、OCR、後端、自動模型呼叫、帳號與資料庫屬後�
 ├─ assets/js/app.js                  已建：首頁與分類篩選
 ├─ assets/js/paper.js                已建：論文資料載入與呈現
 ├─ content/papers/index.json         已建：可公開案例的 id 陣列
-├─ content/papers/<paper-id>.json    已建：首篇教學案例已加入公開索引
-├─ content/methods/index.json        已建：方法詞條陣列
+├─ content/papers/<paper-id>.json    已建：兩篇 published/reviewed
+├─ content/methods/index.json        已建：十七個共用詞條
 ├─ schemas/paper.schema.json         待建：可執行的資料格式驗證
 ├─ scripts/serve.mjs                已建：本機 HTTP 預覽
 ├─ scripts/check.mjs                已建：資料、語法與連結檢查
@@ -208,7 +208,7 @@ basis 只能使用以下四種值：
 - overview.study_design 仍保留可讀的分析說明，且須與 classification 一致；篩選以結構化分類為準。
 - 公開案例可以保留有充分說明的 unclear，不得為發布而猜測；仍需滿足全文、證據與人工核對條件。
 - 2.0 新增必要分類欄位及 evidence_synthesis 方法類別。舊 1.0 案例需逐篇回查來源後遷移，先轉 draft、review.pending，補齊分類再重新核對；不得自動猜填或沿用舊審閱狀態。
-- 目前範本及首篇草稿皆為 2.0，沒有既有 1.0 案例需要遷移；若後續發現其他資料，先盤點再修改。
+- 目前範本、首篇案例及第二篇草稿皆為 2.0，沒有既有 1.0 案例需要遷移；若後續發現其他資料，先盤點再修改。
 
 分類參考：[STROBE](https://www.strobe-statement.org/)、[PRISMA](https://www.prisma-statement.org/)、[EQUATOR](https://equator-network.org/)。這些是報告指引入口，不直接當作研究品質分數。
 
