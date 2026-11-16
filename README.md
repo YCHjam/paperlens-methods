@@ -6,19 +6,19 @@
 
 ## 目前成果
 
-- [AGENTS.md](AGENTS.md)：規則文件 1.5，包含分類、內容、證據、視覺與開發要求。
+- [AGENTS.md](AGENTS.md)：規則文件 1.6，包含分類、內容、證據、視覺與開發要求。
 - [分析指令](prompts/analyze-paper.md)與[資料範本](templates/paper-template.json)：資料契約 2.0。
 - [首頁](index.html)：關鍵字搜尋、研究設計／時間方向／研究目的組合篩選、條件移除與清除。
 - [共用分析頁](paper.html)：分類依據、八個分析區塊、方法卡片與可跳轉的證據定位。
 - [方法小辭典](methods.html)：搜尋、方法類別與相關案例入口。
 - 自動資料檢查、合成測試、公開檔案打包與 GitHub Pages 工作流程。
 
-**目前有 1 篇可發布的真實教學案例、7 個方法詞條。** 首篇為 Buijze et al. 2016 的冷水淋浴 RCT（doi:10.1371/journal.pone.0161749），已閱讀主文、Table 2 與 2018 勘誤；未重分析個體資料或核對全部附件。沒有把合成測試資料放進網站。PDF 自動分析、模型 API 與完整 JSON Schema 尚未實作。
+**網站已公開：1 篇真實教學案例、7 個方法詞條。** 首篇為 Buijze et al. 2016 的冷水淋浴 RCT（doi:10.1371/journal.pone.0161749），已閱讀主文、Table 2 與 2018 勘誤；未重分析個體資料或核對全部附件。沒有把合成測試資料放進網站。PDF 自動分析、模型 API 與完整 JSON Schema 尚未實作。
 
 Repository：https://github.com/YCHjam/paperlens-methods
 公開網站：https://ychjam.github.io/paperlens-methods/
 
-目前為發布準備；部署完成後會更新驗證紀錄。使用者已確認首篇教學案例可發布，不代表原始資料或全部附件已獨立重現驗證。
+已於 2026-11-16 成功部署並以實際網址驗證；部署紀錄見 docs/verification.md。使用者已確認首篇教學案例可發布，不代表原始資料或全部附件已獨立重現驗證。
 
 ## 本機使用
 
@@ -82,7 +82,7 @@ AI 沿用資料契約與共用版型，新增第二篇不必重新寫 HTML。dra
 
 ## GitHub Pages 部署
 
-工作流程依 [GitHub 官方說明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)建立，尚未在遠端執行。
+工作流程依 [GitHub 官方說明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)建立，已在遠端成功執行。以下為後續更新與重部署方式。
 
 1. 將專案推送至自己的 GitHub Repository，主要分支使用 main。
 2. 在 Repository 的 Settings → Pages，將 Source 設為 GitHub Actions。
@@ -95,9 +95,9 @@ AI 沿用資料契約與共用版型，新增第二篇不必重新寫 HTML。dra
 
 ## 課程繳交前
 
-- [ ] 至少一篇真實全文案例已人工核對。
-- [ ] 網站已公開，Repository 與網頁連結可實際開啟。
-- [ ] 提供專案簡介、AGENTS.md 與新增內容方式說明。
+- [x] 至少一篇真實主文全文教學案例已整理並經使用者確認可發布；尚未完成的科學核對仍列在分析限制。
+- [x] 網站已公開，Repository 與網頁連結可實際開啟。
+- [x] 提供專案簡介、AGENTS.md 與新增內容方式說明，見 SUBMISSION.md。
 - [ ] 用第二篇案例驗證延伸性。
 - [ ] 標題依「學校 學號 系級 姓名 主題」填寫，個人資料由使用者提供。
 

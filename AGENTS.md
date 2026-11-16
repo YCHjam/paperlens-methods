@@ -1,6 +1,6 @@
 # AGENTS.md — PaperLens｜研究方法拆解室
 
-版本：1.5  
+版本：1.6  
 更新日期：2026-11-16  
 適用範圍：本 Repository 全部內容與程式。
 
@@ -21,11 +21,11 @@
 
 ## 2. 目前狀態與範圍
 
-目前為「首版發布準備階段」：首頁、分類篩選、共用分析頁、方法小辭典與 GitHub Pages 工作流程均已建立。首篇真實全文教學案例 2016-cold-shower-rct 經使用者確認可發布，公開索引有一篇案例，方法小辭典有七個詞條；使用者的發布確認不代表原始資料、全部附件或數值的獨立重現驗證。
+目前為「首版已公開階段」：首頁、分類篩選、共用分析頁、方法小辭典與 GitHub Pages 工作流程均已建立。首篇真實全文教學案例 2016-cold-shower-rct 經使用者確認可發布，公開索引有一篇案例，方法小辭典有七個詞條；使用者的發布確認不代表原始資料、全部附件或數值的獨立重現驗證。
 
 Repository：https://github.com/YCHjam/paperlens-methods
-公開網站預定網址：https://ychjam.github.io/paperlens-methods/
-遠端部署是否成功須以工作流程及實際網址驗證，不因本段預填網址即宣稱完成。
+公開網站：https://ychjam.github.io/paperlens-methods/
+2026-11-16 首次 GitHub Actions 部署成功，已實際開啟首頁、論文分析頁、小辭典與 AGENTS.md。後續更新仍須確認相應工作流程成功及網址可用。
 
 未實作模型 API；尚待第二篇真實案例的延伸示範。
 
