@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PaperLens｜研究方法拆解室</title>
+  <meta name="description" content="從研究設計到分析方法，用可追溯的證據讀懂生物統計與機器學習論文。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="PaperLens 首頁"><span class="brand-mark" aria-hidden="true">P<span>↗</span></span><span>PaperLens<small>研究方法拆解室</small></span></a>
+    <nav aria-label="主要導覽"><a href="#library" aria-current="page">論文案例</a><a href="methods.html">方法小辭典</a><a href="#workflow">分析規則 <span aria-hidden="true">↗</span></a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> A CLOSER LOOK AT RESEARCH</p>
+        <h1 id="hero-title">讀懂方法，<br>才讀懂<span class="accent">研究。</span></h1>
+        <p class="hero-description">越過摘要與結論，回到研究是怎麼做的。<br>逐步拆解生物統計與機器學習，讓每個判讀都有依據。</p>
+        <div class="actions"><a class="button primary" href="#library">探索論文案例 <span aria-hidden="true">↓</span></a><a class="button secondary" href="AGENTS.md">閱讀專案規則 ↗</a></div>
+        <div class="hero-note"><span class="mini-line" aria-hidden="true"></span> 以證據為起點，以理解為目的</div>
+      </div>
+      <div class="lens-board" aria-label="分析流程：辨識研究設計、拆解分析方法、回到原文證據">
+        <div class="board-top"><span>THE METHOD LENS</span><span class="board-index">01 — 03</span></div>
+        <div class="lens-step"><span class="step-number">01</span><div><p>辨識研究設計</p><span>RCT · Cohort · Systematic review</span></div><span class="step-symbol" aria-hidden="true">↗</span></div>
+        <div class="lens-step"><span class="step-number">02</span><div><p>拆解分析方法</p><span>為什麼使用？條件與限制是什麼？</span></div><span class="step-symbol" aria-hidden="true">↗</span></div>
+        <div class="lens-step"><span class="step-number">03</span><div><p>回到原文證據</p><span>作者明述、分析推論，清楚分開</span></div><span class="step-symbol" aria-hidden="true">↗</span></div>
+        <div class="board-bottom"><span class="status-dot"></span> 每個結論，都留下可回查的線索。</div>
+      </div>
+    </section>
+    <section class="principles-strip" aria-label="專案特色"><div class="page-width principles-inner">
+      <div><strong>01</strong><span>分清研究設計</span></div><div><strong>02</strong><span>理解方法選擇</span></div><div><strong>03</strong><span>保留原文依據</span></div><div><strong>04</strong><span>依規則持續累積</span></div>
+    </div></section>
+    <section id="library" class="page-width library-section" aria-labelledby="library-title">
+      <div class="section-heading"><div><p class="eyebrow">PAPER LIBRARY</p><h2 id="library-title">從一篇論文，開始理解。</h2><p class="muted">依研究設計、時間方向與研究目的，找到你想讀的分析。</p></div><span class="section-number" aria-hidden="true">01 /</span></div>
+      <div class="library-layout">
+        <aside class="filter-panel" aria-label="案例篩選"><div class="filter-top"><h3>篩選案例</h3><button id="clear-filters" class="text-button" type="button">清除全部</button></div>
+          <label class="search-label" for="paper-search">搜尋論文或方法</label><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="paper-search" type="search" placeholder="標題、作者、方法名稱" autocomplete="off"></div>
+          <div id="filter-groups"></div><p class="filter-help">不同條件取交集；同一類別可複選。</p>
+        </aside>
+        <div class="library-results"><div class="results-top"><p id="result-count" role="status" aria-live="polite">正在讀取案例…</p><span>依分析日期排序</span></div><div id="active-filters" class="active-filters" aria-label="目前條件"></div><div id="paper-results" aria-busy="true"></div></div>
+      </div>
+    </section>
+    <section id="workflow" class="workflow-section"><div class="page-width">
+      <div class="section-heading"><div><p class="eyebrow">BUILT TO CONTINUE</p><h2>一套規則，持續讀下去。</h2><p class="muted">新增內容沿用相同格式，讓每篇分析都能被理解、核對與延伸。</p></div><span class="section-number" aria-hidden="true">02 /</span></div>
+      <div class="workflow-grid">
+        <article><span class="workflow-index">01 / INPUT</span><h3>提供可讀的論文</h3><p>確認全文與附件範圍，保留原始資料。摘要不足的地方，明確寫出限制。</p></article>
+        <article><span class="workflow-index">02 / ANALYZE</span><h3>依固定格式拆解</h3><p>分類、八個分析區塊與方法卡片，各自留下原文依據和待確認事項。</p></article>
+        <article><span class="workflow-index">03 / VERIFY</span><h3>核對後再公開</h3><p>核對來源與判讀，確認教學案例可發布後，新增資料即可沿用共用頁面。</p></article>
+      </div>
+      <div class="rule-callout"><div><span class="eyebrow">THE PROJECT CONTRACT</span><h3>讓 AI 知道，下一篇應該怎麼做。</h3><p>AGENTS.md 記錄分類方式、資料格式、證據要求與開發規則。</p></div><a class="button secondary" href="AGENTS.md">開啟 AGENTS.md ↗</a></div>
+      <div class="evidence-legend"><span class="legend-title">我們如何標示依據</span><span class="basis reported">作者明述</span><span class="basis inferred">分析者推論</span><span class="basis not_reported">未報告／未見說明</span><span class="basis not_applicable">不適用</span></div>
+    </div></section>
+    <section class="page-width source-note"><h2>關於這個專案</h2><p>這是一個研究方法學學習網站。目前先建立可重複使用的分析與呈現流程；公開案例收錄已取得主文全文、由 AI 整理並經使用者確認可發布的教學內容；仍保留未核對事項。沒有案例時會如實顯示，不以虛構論文填充。</p><p>分類參考 <a href="https://www.strobe-statement.org/">STROBE</a>、<a href="https://www.prisma-statement.org/">PRISMA</a> 與 <a href="https://equator-network.org/">EQUATOR</a> 的報告指引架構。分析供學習與批判閱讀使用，需回到原文判讀。</p></section>
+  </main>
+  <footer class="site-footer"><div class="page-width footer-inner"><div><strong>PaperLens</strong><span>讓研究方法，看得更清楚。</span></div><div><a href="https://github.com/YCHjam/paperlens-methods">GitHub ↗</a><a href="README.md">專案說明</a><a href="AGENTS.md">AGENTS.md</a><a href="prompts/analyze-paper.md">分析指令</a><span>© <span data-year>2026</span></span></div></div></footer>
+  <noscript><p class="no-script">請啟用 JavaScript 以使用案例篩選；專案規則與分析指令仍可透過上方連結閱讀。</p></noscript>
+</body></html>

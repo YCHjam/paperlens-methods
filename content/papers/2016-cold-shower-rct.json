@@ -1,0 +1,765 @@
+{
+  "schema_version": "2.0",
+  "id": "2016-cold-shower-rct",
+  "status": "published",
+  "article": {
+    "title": "The Effect of Cold Showering on Health and Work: A Randomized Controlled Trial",
+    "authors": [
+      "Geert A. Buijze",
+      "Inger N. Sierevelt",
+      "Bas C. J. M. van der Heijden",
+      "Marcel G. Dijkgraaf",
+      "Monique H. W. Frings-Dresen"
+    ],
+    "year": 2016,
+    "doi": "10.1371/journal.pone.0161749",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161749"
+  },
+  "source_scope": "full_text",
+  "source_files": [
+    {
+      "id": "article",
+      "label": "Buijze et al., PLOS ONE 2016，出版商 HTML 全文",
+      "version": "取得於 2026-11-16；原文頁面顯示 2018 勘誤連結。CC BY 授權；本分析為繁體中文意譯及教學評論，非作者原文。"
+    },
+    {
+      "id": "table2",
+      "label": "原文 Table 2 圖像，doi:10.1371/journal.pone.0161749.t002",
+      "version": "2026-11-16 取得並目視讀取；未做原始資料重分析。"
+    },
+    {
+      "id": "correction",
+      "label": "Buijze et al., PLOS ONE 2018 勘誤，doi:10.1371/journal.pone.0201978",
+      "version": "2026-11-16 閱讀出版商 HTML。"
+    }
+  ],
+  "analysis_date": "2026-11-16",
+  "review": {
+    "status": "reviewed",
+    "reviewer": "專案使用者（GitHub: YCHjam）",
+    "reviewed_at": "2026-11-16",
+    "scope": "使用者看過分析草稿與表格版後，於對話指示繼續並發布至 GitHub；此紀錄表示教學案例的發布確認，不宣稱使用者已獨立重做原文數值、附件或個體資料驗證。"
+  },
+  "classification": {
+    "study_design": {
+      "value": "randomized_controlled_trial",
+      "other_label": null,
+      "rationale": {
+        "text": "平行組、未盲化的隨機對照試驗。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-design",
+          "e-randomization"
+        ]
+      }
+    },
+    "time_direction": {
+      "value": "prospective",
+      "rationale": {
+        "text": "先分派介入再追蹤結果，因此判定為前瞻性；此標籤是依流程推論。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-procedures"
+        ]
+      }
+    },
+    "purposes": [
+      {
+        "value": "intervention_effect_or_causal_question",
+        "rationale": {
+          "text": "目的為評估介入對健康及工作的影響。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-objective"
+          ]
+        }
+      }
+    ],
+    "purposes_note": {
+      "text": "屬介入效果問題，不是預測模型研究。",
+      "basis": "inferred",
+      "evidence_ids": [
+        "e-objective",
+        "e-design"
+      ]
+    },
+    "data_origin": [
+      {
+        "text": "採線上招募與問卷蒐集資料。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-design"
+        ]
+      }
+    ]
+  },
+  "overview": {
+    "research_question": [
+      {
+        "text": "相較照常淋浴，以冷水結尾的淋浴介入是否影響病假與患病天數？",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-objective",
+          "e-outcomes",
+          "e-procedures"
+        ]
+      }
+    ],
+    "study_design": [
+      {
+        "text": "四組隨機分派，未盲化。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-design",
+          "e-randomization"
+        ]
+      }
+    ],
+    "data_and_sample": [
+      {
+        "text": "納入 3,018 人；90 天失訪率 19.6%。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-loss"
+        ]
+      },
+      {
+        "text": "受試者為 18–65 歲有工作成人，排除嚴重共病；三個介入組分別冷水結尾 30、60、90 秒，介入 30 日並追蹤至 90 日。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-randomization",
+          "e-procedures"
+        ]
+      }
+    ],
+    "methods_summary": [
+      {
+        "text": "主要為負二項模型，另列 ITT、離差分析、秩檢定、卡方與 Bonferroni。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-count",
+          "e-secondary"
+        ]
+      }
+    ],
+    "rationale": [
+      {
+        "text": "過度離散是採負二項而非 Poisson 的理由。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-count"
+        ]
+      }
+    ],
+    "assumptions_and_limits": [
+      {
+        "text": "結果自陳，遵從性未能客觀確認。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-outcomes",
+          "e-limitations"
+        ]
+      },
+      {
+        "text": "在已讀取的主文 Statistical Analysis 中，未見完整的分析集與缺漏處理方案；相關附件本次尚未核對。",
+        "basis": "not_reported",
+        "evidence_ids": []
+      }
+    ],
+    "results_interpretation": [
+      {
+        "text": "病假 IRR 0.71（95% CI 0.56–0.89），P=0.003；患病天數 IRR 0.89（0.77–1.01），P=0.073。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-table2"
+        ]
+      },
+      {
+        "text": "病假天數的相對差異，不等於患病機率下降 29%，也不表示每個人少請固定天數。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-table2",
+          "e-outcomes"
+        ]
+      }
+    ],
+    "critical_appraisal": [
+      {
+        "text": "未盲化且自陳結果，可能影響回報或請假決策；不能據此確證免疫改善。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-design",
+          "e-outcomes",
+          "e-limitations"
+        ]
+      },
+      {
+        "text": "失訪與資料驅動合併組別值得查閱預先計畫；這是待釐清的風險，不是已確認的錯誤。",
+        "basis": "inferred",
+        "evidence_ids": [
+          "e-loss",
+          "e-pooling",
+          "e-registration"
+        ]
+      },
+      {
+        "text": "2018 勘誤補列 Table 2 所依據的資料集，並非公告撤回結果。",
+        "basis": "reported",
+        "evidence_ids": [
+          "e-correction"
+        ]
+      }
+    ]
+  },
+  "methods": [
+    {
+      "id": "negative-binomial-regression",
+      "name_zh": "負二項迴歸",
+      "name_en": "Negative binomial regression",
+      "general_explanation": "用來分析非負整數的計數結果。相較將條件平均數與變異數綁在一起的 Poisson 模型，負二項模型增加離散參數，容許較大的變異；log link 可把模型係數轉成乘法尺度的比較。",
+      "general_strengths": [
+        "能處理超過 Poisson 假設的離散程度，並納入多個解釋變項。",
+        "log link 的指數化係數可用相對預期計數解釋；暴露時間不同時還需考慮適當的 offset。"
+      ],
+      "general_limitations": [
+        "不能單憑使用此模型就保證零值分布、模型形式與獨立性合理。",
+        "模型本身不會消除選擇偏差、結果測量偏差或遺漏資料偏差。"
+      ],
+      "general_references": [
+        {
+          "title": "R MASS 官方文件：glm.nb",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/glm.nb.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "主結果採 log link 的負二項模型。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-count"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "作者選用理由是計數資料過度離散。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-count"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 說明過度離散，但未見完整的殘差、零值適配與模型敏感度檢查；本次未查閱模型輸出附件。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "同一追蹤尺度下，表中的 IRR 比較模型預期天數；不能改寫為每個人的患病機率降低相同比例。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-table2"
+          ]
+        }
+      ],
+      "questions": [
+        "若零天數很多，負二項分布能否充分描述？是否比較過其他合理的計數模型？",
+        "失訪者的觀察時間及結果缺漏如何處理？模型是否需要暴露時間調整？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "intention-to-treat",
+      "name_zh": "意向治療分析原則",
+      "name_en": "Intention-to-treat principle",
+      "general_explanation": "分析盡量依原本隨機分派的組別納入所有受試者，即使沒有完全遵守介入。這是分析集與比較策略的原則，不是單獨的統計模型。",
+      "general_strengths": [
+        "有助保留隨機分派的比較架構，減少依介入後行為重新分組造成的偏差。",
+        "可用來評估分派某介入策略的效果，而不只限於完全遵從的人。"
+      ],
+      "general_limitations": [
+        "失訪與結果缺漏仍需明確處理；寫出 ITT 並不表示遺漏資料問題已解決。",
+        "介入不遵從會影響估計對應的問題，不能直接當作完全遵從下的生物效應。"
+      ],
+      "general_references": [
+        {
+          "title": "ICH E9：Statistical Principles for Clinical Trials，5.2.1",
+          "url": "https://database.ich.org/sites/default/files/E9_Guideline.pdf"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者宣稱依 ITT 原則分析。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-count"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能是為保留隨機分派架構；這是依設計推論，不能當成作者另有明述。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-design",
+            "e-count"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 與失訪段落未清楚交代各分析集分母及缺漏處理全貌；本次未核對原始資料與附件。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "應區分「作者宣稱 ITT」與「已確認所有分派者均納入且缺漏處理合理」；後者仍需核對。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-count",
+            "e-loss"
+          ]
+        }
+      ],
+      "questions": [
+        "每個主要終點實際納入多少人？是否與隨機分派分母一致？",
+        "有沒有針對不同缺漏機制做敏感度分析？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "analysis-of-deviance",
+      "name_zh": "離差分析",
+      "name_en": "Analysis of deviance",
+      "general_explanation": "在廣義線性模型中，利用離差衡量模型配適；在合適的設定下，可評估加入某變項或一組變項是否改善模型。比較方式、檢定分布與變項次序必須說明。",
+      "general_strengths": [
+        "可評估多層類別變項或整組項目的貢獻，而不只逐個看係數。",
+        "可配合模型架構比較較簡單與較複雜的解釋。"
+      ],
+      "general_limitations": [
+        "巢狀模型比較需使用相同觀察資料；缺漏造成樣本不同會使比較失去意義。",
+        "不顯著不等於等效；依資料選模或合併組別會增加解讀上的不確定性。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：anova.glm",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/anova.glm.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者以離差分析檢視候選變項。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能用於評估變項整體貢獻；實際檢定形式仍須依模型輸出確認。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 未完整列出各模型比較的次序、自由度與檢定形式；附件尚未核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "作者合併介入組的做法需回查預先計畫，不能因未達顯著就認定三種時長效果相同。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-pooling"
+          ]
+        }
+      ],
+      "questions": [
+        "合併三個介入組是否事先規劃？若是資料驅動決策，如何反映其不確定性？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "kruskal-wallis",
+      "name_zh": "Kruskal–Wallis 秩和檢定",
+      "name_en": "Kruskal–Wallis rank sum test",
+      "general_explanation": "把獨立組別的觀察值轉成秩，檢視多組的分布位置是否有差異。只有在適當的分布形狀假設下，才宜簡化解釋成中位數差異。",
+      "general_strengths": [
+        "不要求原始數值服從常態分布，適用於多個獨立組別的秩次比較。",
+        "可對多組先做整體檢定。"
+      ],
+      "general_limitations": [
+        "仍有獨立觀察等條件，不是完全沒有假設。",
+        "整體顯著不能直接指出哪一組不同，也不直接提供原始單位的效果量。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：kruskal.test",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/kruskal.test.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "非正態連續型次要結果使用秩檢定。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "作者將這類檢定對應至非正態連續變項。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 未逐一對應每項結果使用哪個秩檢定，也未詳述分布形狀；附件尚未核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "整體組間差異仍須配合效果量與比較策略，不能只用一個 P 值描述臨床意義。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "questions": [
+        "哪些結果是多組整體比較？後續成對比較如何控制多重性？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "mann-whitney-u",
+      "name_zh": "Mann–Whitney U 檢定",
+      "name_en": "Mann–Whitney U test",
+      "general_explanation": "以秩次比較兩個獨立樣本；與 Wilcoxon rank-sum test 對應。它不等於用於同一人前後測的 Wilcoxon signed-rank test。",
+      "general_strengths": [
+        "適合兩個獨立組別的秩次比較，不要求原始數值常態。",
+        "對偏斜或序位資料可提供與平均數檢定不同的比較方式。"
+      ],
+      "general_limitations": [
+        "若要解釋為單純中位數差異，仍需分布形狀等額外條件。",
+        "不能直接當成重複測量或配對資料的分析方法；多次比較需考慮多重性。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：wilcox.test",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/wilcox.test.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者另列 Mann–Whitney U 處理次要結果。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能對應兩組的非正態結果比較；本文未逐項明說每一次比較的選用理由。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 未逐項交代組別配對、綁定值及精確／近似計算方式；附件尚未核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "需先確認是同一時點的獨立組間比較，不能據此宣稱已建模同一人的時間變化。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary",
+            "e-procedures"
+          ]
+        }
+      ],
+      "questions": [
+        "各時間點是獨立呈現組間差異，還是另有分析受試者內的變化？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "chi-square-test",
+      "name_zh": "卡方檢定",
+      "name_en": "Chi-square test",
+      "general_explanation": "以觀察頻數與虛無假設下的預期頻數比較，常用來檢視列聯表中兩個類別變項是否獨立。資料是頻數，不是直接拿百分比代入。",
+      "general_strengths": [
+        "可用簡單列聯表比較類別結果與組別的關聯。",
+        "能處理多於兩組或多於兩個類別的整體比較。"
+      ],
+      "general_limitations": [
+        "漸近近似需注意預期頻數與觀察獨立性。",
+        "顯著性不直接提供關聯大小，仍需報告適當的比例、效果量及不確定性。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：chisq.test",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/chisq.test.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "作者對類別型次要結果列出卡方檢定。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "可能因結果為類別頻數而使用；具體列聯表需再對照。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 未列出所有列聯表的預期頻數與小格數處理；附件尚未核對。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "需讀清楚分母與類別定義；卡方結果不能直接替代效果量。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "questions": [
+        "是否有稀疏格數？若有，是否採用適當的精確或模擬方法？"
+      ],
+      "category": "biostatistics"
+    },
+    {
+      "id": "bonferroni-correction",
+      "name_zh": "Bonferroni 多重比較校正",
+      "name_en": "Bonferroni correction",
+      "general_explanation": "在界定好的檢定家族內，以更嚴格的個別門檻或調整後 P 值控制至少一次第一類錯誤的機率。做法是以比較數乘 P 值，或用整體 alpha 除以比較數。",
+      "general_strengths": [
+        "計算與說明簡單，能在不要求各檢定互相獨立的條件下提供家族錯誤率控制。",
+        "容易事先規範多個結果的判讀門檻。"
+      ],
+      "general_limitations": [
+        "比較很多或高度相關時可能保守，降低檢出真實差異的能力。",
+        "必須先界定家族與比較數；不會自動修正資料驅動選模、未列出的比較或偏差。"
+      ],
+      "general_references": [
+        {
+          "title": "R stats 官方文件：p.adjust",
+          "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html"
+        }
+      ],
+      "application": [
+        {
+          "text": "次要結果門檻調整為 P < 0.005。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "作者明說用於多個結果變項的檢定校正。",
+          "basis": "reported",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "主文 Statistical Analysis 未完整逐列界定校正家族；本次未核對預先計畫，不能僅由門檻反推比較數。",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "次要結果應依其校正門檻解讀，不應一律套用 0.05。",
+          "basis": "inferred",
+          "evidence_ids": [
+            "e-secondary"
+          ]
+        }
+      ],
+      "questions": [
+        "家族包含哪些結果與時間點？是否包含事後組間比較？"
+      ],
+      "category": "biostatistics"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-objective",
+      "source_file_id": "article",
+      "section": "Introduction",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "研究目的段落；主文 Introduction 最後一段。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-design",
+      "source_file_id": "article",
+      "section": "Methods / Study Design",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節第 1、2 段：研究型態、線上流程及務實設計。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-registration",
+      "source_file_id": "article",
+      "section": "Methods / Study Design",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節最後一段：招募後登錄及分析時程；須再與登錄紀錄核對。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-randomization",
+      "source_file_id": "article",
+      "section": "Methods / Participants",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節全節：受試者資格、四組配置、電腦隨機數、未採區塊與分層及分派隱蔽說明。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-procedures",
+      "source_file_id": "article",
+      "section": "Methods / Procedures",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節第 1–4 段：介入、後續自由選擇階段及追蹤問卷時點。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-outcomes",
+      "source_file_id": "article",
+      "section": "Methods / Outcomes",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節第 1、2 段：病假與患病天數定義，均以線上自陳取得。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-count",
+      "source_file_id": "article",
+      "section": "Methods / Statistical Analysis",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節第 2 段：ITT 原則、負二項 log link，以及相對 Poisson 的選用理由。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-secondary",
+      "source_file_id": "article",
+      "section": "Methods / Statistical Analysis",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "本節第 3、4 段：離差分析、非參數及類別比較、多重結果校正。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-loss",
+      "source_file_id": "article",
+      "section": "Results",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "Results 第 1 段：納入人數與兩次追蹤的失訪率。缺漏的處理方式須另查分析集及附件。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-pooling",
+      "source_file_id": "article",
+      "section": "Results",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "Table 2 前的段落：作者依組間差異檢查說明合併介入組的處理。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-table2",
+      "source_file_id": "table2",
+      "section": "Table 2",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "上半部病假及下半部患病天數的 Group（intervention groups vs control）列；讀取 Exponential Estimate（95% CI）與 P value 欄。原始圖網址：https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0161749.t002",
+      "excerpt": ""
+    },
+    {
+      "id": "e-limitations",
+      "source_file_id": "article",
+      "section": "Discussion",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "限制段落（依序說明自陳、樣本特性、流失、遵從性、追蹤期與水溫差異），及結尾對客觀結果的需求。",
+      "excerpt": ""
+    },
+    {
+      "id": "e-correction",
+      "source_file_id": "correction",
+      "section": "Correction / Supporting information",
+      "pdf_page": null,
+      "printed_page": null,
+      "locator": "更正內文及 S1 File 說明：補入 Table 2 所依據的資料集；本次未下載或分析該個體層級資料。",
+      "excerpt": ""
+    }
+  ],
+  "reading_questions": [
+    "病假天數與自覺患病天數是不同終點，為什麼兩者可能不一致？",
+    "負二項模型處理過度離散後，零天數與缺漏值是否仍需要其他檢查？",
+    "作者所稱 ITT 的實際分析集、分母與缺漏處理能否由附件確認？",
+    "合併介入組與多重比較家族是否事先規劃？",
+    "試驗登錄晚於招募，應如何比對方案、登錄與發表結果，而不是直接認定有選擇性報告？",
+    "原文未採機器學習；未來新增預測研究時，哪些驗證問題需要另加？",
+    "勘誤補入的資料能否支持重現 Table 2？若要重分析，先檢查權限及個體資料隱私。"
+  ],
+  "limitations": [
+    "本份為 AI 整理的教學案例，經使用者確認可發布；保留尚待核對事項。此發布確認不等於原文、全部附件或原始資料的全面獨立審核。",
+    "閱讀範圍為主文 HTML、原文 Table 2 圖像及 2018 勘誤。未逐一閱讀其他圖表、研究方案、CONSORT 清單、模型輸出與登錄歷史。",
+    "HTML 無固定頁碼，因此 pdf_page 與 printed_page 使用 null，以章節和段落定位；未捏造頁碼。",
+    "勘誤補入的個體層級資料未下載、未重分析。只確認勘誤公告內容。",
+    "本文未使用機器學習。本案例先示範生物統計與 RCT 判讀，不為涵蓋分類而加入不存在的方法。",
+    "方法通識的 R 官方文件是解釋參考；不代表原研究以 R 執行，也未使用文件的軟體版本重跑結果。",
+    "原文及勘誤為 CC BY。應保留作者、文章及勘誤 DOI，並清楚標示本分析的意譯與評論性質。",
+    "本次以原文已辨識的七項分析方法／原則建立卡片，尚未進行全文數值的全面重現驗證。"
+  ]
+}

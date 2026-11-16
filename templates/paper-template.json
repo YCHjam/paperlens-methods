@@ -1,0 +1,102 @@
+{
+  "schema_version": "2.0",
+  "id": "replace-with-paper-id",
+  "status": "draft",
+  "article": {
+    "title": null,
+    "authors": [],
+    "year": null,
+    "doi": null,
+    "url": null
+  },
+  "source_scope": null,
+  "source_files": [],
+  "analysis_date": null,
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "classification": {
+    "study_design": {
+      "value": "unclear",
+      "other_label": null,
+      "rationale": {
+        "text": "",
+        "basis": "not_reported",
+        "evidence_ids": []
+      }
+    },
+    "time_direction": {
+      "value": "unclear",
+      "rationale": {
+        "text": "",
+        "basis": "not_reported",
+        "evidence_ids": []
+      }
+    },
+    "purposes": [],
+    "purposes_note": {
+      "text": "",
+      "basis": "not_reported",
+      "evidence_ids": []
+    },
+    "data_origin": []
+  },
+  "overview": {
+    "research_question": [],
+    "study_design": [],
+    "data_and_sample": [],
+    "methods_summary": [],
+    "rationale": [],
+    "assumptions_and_limits": [],
+    "results_interpretation": [],
+    "critical_appraisal": []
+  },
+  "methods": [
+    {
+      "id": "replace-with-method-id",
+      "name_zh": "",
+      "name_en": "",
+      "category": null,
+      "general_explanation": "",
+      "general_strengths": [],
+      "general_limitations": [],
+      "general_references": [],
+      "application": [
+        {
+          "text": "",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "selection_reason": [
+        {
+          "text": "",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "assumptions_check": [
+        {
+          "text": "",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "interpretation": [
+        {
+          "text": "",
+          "basis": "not_reported",
+          "evidence_ids": []
+        }
+      ],
+      "questions": []
+    }
+  ],
+  "evidence": [],
+  "reading_questions": [],
+  "limitations": [
+    "空白範本：所有佔位欄位需依實際來源補齊；不得直接公開為案例。"
+  ]
+}
