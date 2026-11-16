@@ -63,3 +63,7 @@
 ## 第二篇發布前驗證 2026-11-16
 
 使用者授權更新網站後，兩篇資料均通過發布門檻，check 回報 2 public papers、17 dictionary entries；七項測試全數通過，build 僅包含兩篇公開案例並排除 local/。新增第二篇沒有修改共用 HTML、CSS、JavaScript 或 schema。
+
+## 第二篇公開部署驗證
+
+2026-11-16，commit 58bb0235231297bc0a61094ef95ed6e4e885e51e 的 GitHub Actions run 43881974679 已成功。實際公開首頁顯示共 2 篇，第二篇網址可開啟且呈現 12 張方法表格。方法小辭典資料共 17 個詞條。
